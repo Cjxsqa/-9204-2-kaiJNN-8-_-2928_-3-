@@ -3,6 +3,10 @@ name: _____
 on:
   push:
     branches: [ "main" ]
+    
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   YT:
